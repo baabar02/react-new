@@ -1,5 +1,6 @@
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Title from "@/components/Title";
 
 export default function Home() {
   return (
@@ -7,24 +8,12 @@ export default function Home() {
       style={{
         display: "flex",
         justifyContent: "center",
+
         alignItems: "center",
         height: "100vh" 
       }}
     >
-      <div
-        style={{
-          alignContent: "center",
-          width: "586px",
-          height: "496px",
-          padding: "20px"
-        }}
-      >
-        <h1 style={{ color: "#1877f2" }}>facebook</h1>
-        <h2>
-          Connect with friends and the
-          <br /> world around you on Facebook
-        </h2>
-      </div>
+  <Title/>
       <div
         style={{
           height: 396,
@@ -38,7 +27,9 @@ export default function Home() {
           gap: 10,
           padding: "20px"
         }}
+      
       >
+      
         <Input border="0.5px solid grey" placeholder="Email or phone number" />
         <Input border="0.5px solid grey" placeholder="Password" />
 
