@@ -58,26 +58,28 @@ import { B } from "@/components/B";
 //     </div>
 //   );
 // }
-// import A from "@/components/A";
+import A from "@/components/A";
 
 const Home = () => {
   const gene = "Inherited Gene from Amcestors";
   const color = "green";
   const font = "25px";
 
-  const which = "A";
-  if (which === "A") {
-    return "HAHA";
-  }
-  {
-    which === "B" ? "A" : "B";
-    return "hehe";
-  }
-  return (
-    <div>
-      <A gene={gene} color={color} font={font} />
-    </div>
-  );
+  // return (
+  //   // <div>
+  //   //   <A gene={gene} color={color} font={font}/>
+  //   // </div>
+  // );
 };
 
 export default Home;
+
+// const which = "A";
+// if (which === "A") {
+//   return "HAHA";
+// }
+
+// {
+//   which === "B" ? "A" : "B";
+//   return "hehe";
+// }
