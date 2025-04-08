@@ -1,7 +1,44 @@
-.custom-button {
+/* .custom-button {
     background-color: #42b72a;
 }
 .custom-button:hover {
     background-color: #42b744;
+} */
+
+.logo{
+    background-image: image();
+    height: 51px;
+    width: 175;
+    
 }
 
+.button{
+    background-color: #0095F6;
+}
+
+.button:hover{
+    background-color: green;
+}
+
+/* .button-F {
+    color: #0095F6;
+}
+.button-F.text:hover {
+    color: black;
+} */
+
+.buttonF {
+    background-color: #0095F6; /* Match B's default background */
+}
+
+.buttonF:hover {
+    background-color: green; /* Match B's hover background */
+}
+
+.buttonF .text {
+    color: #0095F6; /* Default text color for D */
+}
+
+.buttonF:hover .text {
+    color: black; /* Text color on hover */
+}

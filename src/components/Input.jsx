@@ -16,7 +16,7 @@ const Input = (props) => {
 
 export default Input;
 
-const A = () => {
-  const gene = "sad";
-  return <div>A gene = {props.gene}</div>;
-};
+// const A = () => {
+//   const gene = "sad";
+//   return <div>A gene = {props.gene}</div>;
+// };
