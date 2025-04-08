@@ -1,6 +1,6 @@
 // src/components/Button.jsx
-import React from 'react';
-// import ''; 
+import React from "react";
+import Asdfgh from "../styles/Hover.module.css";
 
 const Button = (props) => {
   return (
@@ -15,7 +15,7 @@ const Button = (props) => {
         border: "none",
         marginLeft: props.marginLeft,
         cursor: "pointer",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       {props.text}
