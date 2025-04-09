@@ -1,15 +1,25 @@
-const Ingredient = (props) => {
+const RecipeIngredient = (props) => {
+
+
+
   return (
+    
     <div>
-      <h3></h3>
+      
       <ul>
-        {props.name} {props.amount} {props.measurenment}
+        <li>{props.name}   {props.amount}   {props.measurement}</li>
       </ul>
     </div>
   );
 };
 
-export default Ingredient;
+
+
+
+
+export default RecipeIngredient;
+
+
 
 //   {
 //     name: "Baked Salmon",
