@@ -1,25 +1,16 @@
 const RecipeIngredient = (props) => {
-
-
-
   return (
-    
     <div>
-      
       <ul>
-        <li>{props.name}   {props.amount}   {props.measurement}</li>
+        <li>
+          {props.name} {props.amount} {props.measurement}
+        </li>
       </ul>
     </div>
   );
 };
 
-
-
-
-
 export default RecipeIngredient;
-
-
 
 //   {
 //     name: "Baked Salmon",

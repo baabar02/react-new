@@ -1,9 +1,9 @@
 const FishIngredient = (props) => {
-    return (
+  return (
     <li>
-      {props.name}     {props.amount}     {props.measurement}
+      {props.name} {props.amount} {props.measurement}
     </li>
-    )
-  }
+  );
+};
 
-  export default FishIngredient;
+export default FishIngredient;
