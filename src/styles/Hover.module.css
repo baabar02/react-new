@@ -5,7 +5,7 @@
     background-color: #42b744;
 } */
 
-.logo{
+/* .logo{
     background-image: image();
     height: 51px;
     width: 175;
@@ -27,18 +27,27 @@
     color: black;
 } */
 
-.buttonF {
-    background-color: #0095F6; /* Match B's default background */
-}
+/* .buttonF {
+    background-color: #0095F6; 
+/* }
 
 .buttonF:hover {
-    background-color: green; /* Match B's hover background */
-}
+    background-color: green; 
+/* }
 
 .buttonF .text {
-    color: #0095F6; /* Default text color for D */
-}
+    color: #0095F6;
+/* } */
 
-.buttonF:hover .text {
-    color: black; /* Text color on hover */
-}
+/* .buttonF:hover .text {
+    color: black;
+/* }    */
+
+
+.sidebar-item {
+    background-color: yellow;
+  }
+  
+  .sidebar-item:hover {
+    background-color: green; 
+  }
