@@ -43,11 +43,14 @@
     color: black;
 /* }    */
 
-
 .sidebar-item {
-    background-color: yellow;
-  }
-  
-  .sidebar-item:hover {
-    background-color: green; 
-  }
+  background-color: yellow;
+}
+
+.sidebar-item:hover {
+  background-color: green;
+}
+
+.box {
+  border: "1px solid red";
+}
