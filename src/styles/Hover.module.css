@@ -42,7 +42,7 @@
 /* .buttonF:hover .text {
     color: black;
 /* }    */
-
+/* 
 .sidebar-item {
   background-color: yellow;
 }
@@ -53,4 +53,18 @@
 
 .box {
   border: "1px solid red";
-}
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  .thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
