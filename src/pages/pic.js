@@ -23,7 +23,7 @@ const youtubes = [
   {
     image:
       "https://i.ytimg.com/an_webp/IectiZVqDcA/mqdefault_6s.webp?du=3000&sqp=CKDp578G&rs=AOn4CLC-VOydM71ZzsjAzHhCxBzjZ5K_Iw",
-    title: "Introduction to React",
+    title: "Introduction to Pinecone",
     logo: "https://yt3.ggpht.com/ytc/AIdro_mBY_b6sYztE4DQ8CAiLNmv7JPv6QcoDx08tUvWpwVBATA=s88-c-k-c0x00ffffff-no-rj",
     desc: "Learn the basics of React in this beginner-friendly tutorial.",
     views: "10K views",
@@ -32,7 +32,7 @@ const youtubes = [
   {
     image:
       "https://i.ytimg.com/an_webp/P4DCgZI9DFI/mqdefault_6s.webp?du=3000&sqp=CMjn578G&rs=AOn4CLBytxA4-oxiZ4x995XQGngAKm950Q",
-    title: "Advanced JavaScript Tips",
+    title: "Video",
     logo: "https://yt3.ggpht.com/ytc/AIdro_mBY_b6sYztE4DQ8CAiLNmv7JPv6QcoDx08tUvWpwVBATA=s88-c-k-c0x00ffffff-no-rj",
     desc: "Deep dive into JavaScript techniques.",
     views: "1K views",
@@ -41,16 +41,16 @@ const youtubes = [
   {
     image:
       "https://i.ytimg.com/vi/dcKGN_lTdyM/hqdefault.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGCQgXihyMA8=&rs=AOn4CLBZA9G3VTpfh8QOBYOat0_nBQxFkw",
-    title: "CSS Grid Tutorial",
+    title: "Inception soundtrack",
     logo: "https://yt3.ggpht.com/ytc/AIdro_mBY_b6sYztE4DQ8CAiLNmv7JPv6QcoDx08tUvWpwVBATA=s88-c-k-c0x00ffffff-no-rj",
-    desc: "Master CSS Grid with practical examples.",
+    desc: "Inception soundtrack.",
     views: "1K views",
     postedTime: new Date("2025-02-01T23:59:00"),
   },
   {
     image:
       "https://i.ytimg.com/vi/E_ey8xCbUD8/hqdefault.jpg?sqp=-oaymwFBCNACELwBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGHIgSignMA8=&rs=AOn4CLD-Wxlj7OawjbiOs2SWvltFR75Fdg",
-    title: "Node.js Crash Course",
+    title: "Last of the Mohicans",
     logo: "https://yt3.ggpht.com/ytc/AIdro_mBY_b6sYztE4DQ8CAiLNmv7JPv6QcoDx08tUvWpwVBATA=s88-c-k-c0x00ffffff-no-rj",
     desc: "Build a backend with Node.js.",
     views: "1K views",
@@ -85,12 +85,20 @@ const youtubes = [
   },
 ];
 
+
+
 const Page = () => {
+
+ 
   return (
     <div style={{ backgroundColor: "#f9f9f9", minHeight: "100vh" }}>
       <Videos youtubes={youtubes} />
     </div>
   );
+
+
 };
+youtubes.sort((a, b) => b.postedTime - a.postedTime);
+
 
 export default Page;
