@@ -6,6 +6,7 @@ const dotClick = (title)=> {
   alert(`${title}`)
 }
 
+
   return (
     <div
       style={{
