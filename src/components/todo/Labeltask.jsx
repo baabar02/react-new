@@ -1,5 +1,6 @@
 import { Check, ClipboardCheck } from "lucide-react";
-import Button from "./Button";
+import Button from "./To-do-Button";
+import Addtask from "./Addtask";
 
 // const [changes, setChanges] = useState();
 // const clickchange = (e) => {
@@ -7,7 +8,7 @@ import Button from "./Button";
 //   console.log(e.target.value);
 // };
 
-const Labeltask = (props) => {
+const Labeltask = ({ taskChecked, taskName, handleChecked, setTask }) => {
   return (
     <div
       style={{
@@ -22,8 +23,7 @@ const Labeltask = (props) => {
         backgroundColor: "#F9FAFB",
       }}
     >
-      
-      <label
+      <input
         style={{
           height: "20px",
           width: "20px",
@@ -33,12 +33,14 @@ const Labeltask = (props) => {
           display: "inline-block",
           backgroundColor: "#3C82F6",
           color: "white",
+          cursor: "pointer",
+          background: <Check />,
         }}
-      >
-        <Check />
-      </label>
-      {props.taskName}
-      <Button text="delete"/>
+        type="checkbox"
+      ></input>
+      {taskName}
+      {handleChecked}
+      <Button text="delete" />
       {/* <button
         style={{
           height: "30",
@@ -94,11 +96,7 @@ export default Labeltask;
 //           }}
 //           aria-label={`Mark ${taskName} as ${taskChecked ? "incomplete" : "complete"}`}
 //         />
-//         {taskChecked && <Check size={16} color="#3C82F6" />}
-//         <span style={{ textDecoration: taskChecked ? "line-through" : "none" }}>
-//           {taskName || "Untitled Task"}
-//         </span>
-//       </label>
+//
 //       <Button
 //         text="Delete"
 //         backgroundColor="transparent"

@@ -1,22 +1,37 @@
-import { useState } from "react";
 import Button from "./To-do-Button";
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
-const Addtask = ({ task, setTask, allSet,all }) => {
+const Addtask = ({ task, setTask, allSet, all, handleChecked }) => {
   const handleChange = (event) => {
-
     setTask(event.target.value);
-    console.log(event.target.value); 
+    console.log(event.target.value);
   };
-const clickHandler =() =>{
-  allSet(prev=> [...prev,{taskName:task,  taskChecked:false}])
-console.log(task);
-  setTask("")
-}
 
+  const clickHandler = () => {
+    const randomId = uuidv4();
+    if (task === "") {
+      alert("please enter task name");
+      return;
+    }
 
+    allSet((prev) => [
+      ...prev,
+      { taskName: task, taskChecked: false, id: randomId },
+    ]);
+    setTask("");
+  };
+
+  const deleteHandler = () => {
+    setTask("");
+  };
+
+  const handleChecked = () => {
+    allSet((prev) => [...prev, { id: randomId }]);
+  };
 
   return (
-    <div 
+    <div
       style={{
         display: "flex",
         flexDirection: "row",
@@ -24,7 +39,6 @@ console.log(task);
         justifyContent: "center",
         width: 345,
       }}
-     
     >
       <input
         style={{
@@ -33,36 +47,14 @@ console.log(task);
           width: "280px",
           borderRadius: "6px",
         }}
+        id="task-id"
         type="text"
         placeholder="Add a new task"
         value={task}
         onChange={handleChange}
-      
       />
-      <Button 
-        
-        onClick={clickHandler}
-        text="add"
-       
-        />
-
-
-      {/* <button
-        onClick={clickHandler}
-        style={{
-          // height: "100%",
-          height: 40,
-
-          width: "59px",
-          borderRadius: "6px",
-          border: "none",
-          // backgroundColor: "#3C82F6",
-          color: "white",
-          cursor: "pointer",
-        }}
-      >
-      
-      </button> */}
+      <Button onClick={clickHandler} text="add" />
+      <Button onClick={deleteHandler} text="delete" />
     </div>
   );
 };
@@ -86,7 +78,7 @@ export default Addtask;
 //   };
 
 //   const deleteHandler = () => {
-//     allSet([]); // Clear all tasks
+//     allSet([]);
 //   };
 
 //   return (

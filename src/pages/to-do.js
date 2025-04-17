@@ -1,18 +1,15 @@
-import Addtask from "@/components/Addtask";
-import Filtertask from "@/components/Filtertask";
-import Cleartask from "@/components/Cleartask";
-import Alerttask from "@/components/Alerttask";
-import Labeltask from "@/components/Labeltask";
-import Button from "@/components/To-do-Button";
+import Addtask from "@/components/todo/Addtask";
+import Filtertask from "@/components/todo/Filtertask";
+import Cleartask from "@/components/todo/Cleartask";
+// import Alerttask from "@/components/todo/Alerttask";
+import Labeltask from "@/components/todo/Labeltask";
+import Button from "@/components/todo/To-do-Button";
 import { useState } from "react";
+import { uuid } from "react";
 
 const Home = () => {
-
   const [task, setTask] = useState();
   const [all, allSet] = useState([]);
-  console.log(task,"sads");
-  
- 
 
   return (
     <div
@@ -35,35 +32,43 @@ const Home = () => {
           boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
         }}
       >
+        {/* {JSON.stringify(all)} */}
+
         <h1 style={{ fontSize: 28 }}>To-Do List</h1>
-        <Addtask  task={task} setTask={setTask} allSet={allSet} all={all}/>
+        <Addtask
+          task={task}
+          setTask={setTask}
+          allSet={allSet}
+          all={all}
+          handleChecked={handleChecked}
+        />
 
-     
         <div>
-          
-        {all.map((el,index) => {
+          {all.map((el, index) => {
+            return (
+              <Labeltask
+                key={index}
+                taskName={el.taskName}
+                taskChecked={el.taskChecked}
 
-          return (
-           
-            <Labeltask key={index} taskName={el.taskName} />
-                )
-              
-            }
-          
-            
-            
-         )}
-        </div> 
-  
-        <Filtertask />
-       
+                // onDelete={allSet(
+                //   all.filter((task) =>
+                //     el.taskChecked === false ? task.id : " "
+                //   )
+                // )}
+              />
+            );
+          })}
+        </div>
+
+        {/* <Filtertask /> */}
+
         {/* <Cleartask /> */}
-        <Alerttask />
+        {/* <Alerttask /> */}
       </div>
     </div>
   );
 };
-
 
 export default Home;
 
@@ -74,7 +79,6 @@ export default Home;
 //     ":hover": { backgroundColor: "#EDF2F7" },
 //   }}
 // ></div>
-
 
 // const Home = () => {
 //   const [task, setTask] = useState("");
@@ -103,8 +107,7 @@ export default Home;
 //           padding: 20,
 //         }}
 //       >
-//         <h1 style={{ fontSize: 28 }}>To-Do List</h1>
-//         <Addtask task={task} setTask={setTask} allSet={setAll} all={all} />
+//
 //         <div style={{ width: "100%", maxWidth: 345, marginTop: 20 }} role="list">
 //           {all.length === 0 ? (
 //             <p style={{ color: "grey", textAlign: "center" }}>No tasks yet. Add one above!</p>
@@ -114,8 +117,8 @@ export default Home;
 //                 key={el.id}
 //                 taskName={el.taskName}
 //                 taskChecked={el.taskChecked}
-//                 onDelete={() => setAll(all.filter((task) => task.id !== el.id))}
-//                 onToggle={() => setAll(all.map((task) => task.id === el.id ? { ...task, taskChecked: !task.taskChecked } : task))}
+//
+//
 //               />
 //             ))
 //           )}
