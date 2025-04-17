@@ -1,15 +1,33 @@
 import Addtask from "@/components/todo/Addtask";
 import Filtertask from "@/components/todo/Filtertask";
 import Cleartask from "@/components/todo/Cleartask";
-// import Alerttask from "@/components/todo/Alerttask";
 import Labeltask from "@/components/todo/Labeltask";
 import Button from "@/components/todo/To-do-Button";
 import { useState } from "react";
-import { uuid } from "react";
+import { v4 as uuid } from "uuid";
 
 const Home = () => {
-  const [task, setTask] = useState();
-  const [all, allSet] = useState([]);
+  const [task, setTask] = useState("");
+  const [all, setAll] = useState([]);
+
+ 
+
+  const handleChecked = (id) => {  
+
+    setAll((prev) => {
+      return prev.map((task) => {
+        if (task.id === id) {
+          return { ...task, taskChecked: !task.taskChecked };
+        }
+        return task;
+      });
+    });
+  };
+
+  const handleDelete =( id) => {
+    setAll((prev)=> prev.filter((task)=> task.id !== id))
+  }
+
 
   return (
     <div
@@ -32,38 +50,37 @@ const Home = () => {
           boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
         }}
       >
-        {/* {JSON.stringify(all)} */}
+        {JSON.stringify(all)}
 
         <h1 style={{ fontSize: 28 }}>To-Do List</h1>
         <Addtask
           task={task}
           setTask={setTask}
-          allSet={allSet}
+          setAll={setAll}
           all={all}
           handleChecked={handleChecked}
         />
 
         <div>
-          {all.map((el, index) => {
+          {all.map((el) => {
             return (
               <Labeltask
-                key={index}
+                key={el.id}
                 taskName={el.taskName}
                 taskChecked={el.taskChecked}
+                id={el.id}
+                handleChecked={handleChecked}
+                setAll={setAll}
+                handleDelete={handleDelete}
 
-                // onDelete={allSet(
-                //   all.filter((task) =>
-                //     el.taskChecked === false ? task.id : " "
-                //   )
-                // )}
               />
             );
           })}
         </div>
 
-        {/* <Filtertask /> */}
+        <Filtertask />
 
-        {/* <Cleartask /> */}
+        <Cleartask />
         {/* <Alerttask /> */}
       </div>
     </div>
@@ -72,62 +89,5 @@ const Home = () => {
 
 export default Home;
 
-//   <div
-//   style={{
-//     ...,
-//     transition: "background-color 0.2s",
-//     ":hover": { backgroundColor: "#EDF2F7" },
-//   }}
-// ></div>
 
-// const Home = () => {
-//   const [task, setTask] = useState("");
-//   const [all, setAll] = useState([]);
 
-//   return (
-//     <div
-//       style={{
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         minHeight: "100vh",
-//       }}
-//     >
-//       <div
-//         style={{
-//           display: "flex",
-//           flexDirection: "column",
-//           justifyContent: "center",
-//           alignItems: "center",
-//           height: "auto",
-//           width: "100%",
-//           maxWidth: 377,
-//           borderRadius: "6px",
-//           boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
-//           padding: 20,
-//         }}
-//       >
-//
-//         <div style={{ width: "100%", maxWidth: 345, marginTop: 20 }} role="list">
-//           {all.length === 0 ? (
-//             <p style={{ color: "grey", textAlign: "center" }}>No tasks yet. Add one above!</p>
-//           ) : (
-//             all.map((el) => (
-//               <Labeltask
-//                 key={el.id}
-//                 taskName={el.taskName}
-//                 taskChecked={el.taskChecked}
-//
-//
-//               />
-//             ))
-//           )}
-//         </div>
-//         <Filtertask />
-//         <Alerttask />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;

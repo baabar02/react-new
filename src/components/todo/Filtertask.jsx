@@ -1,3 +1,5 @@
+import Button from "../todo/To-do-Button";
+
 const Filtertask = () => {
   return (
     <div style={{ display: "flex", flexDirection: "row", width: 345, gap: 6 }}>
@@ -11,6 +13,7 @@ const Filtertask = () => {
           backgroundColor: "#3C82F6",
           color: "white",
           cursor: "pointer",
+        
         }}
       >
         All
@@ -58,3 +61,4 @@ const Filtertask = () => {
 };
 
 export default Filtertask;
+
