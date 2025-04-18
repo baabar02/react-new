@@ -4,16 +4,14 @@ import Cleartask from "@/components/todo/Cleartask";
 import Labeltask from "@/components/todo/Labeltask";
 import Button from "@/components/todo/To-do-Button";
 import { useState } from "react";
+import Alerttask from "@/components/todo/Alerttask";
 import { v4 as uuid } from "uuid";
 
 const Home = () => {
   const [task, setTask] = useState("");
   const [all, setAll] = useState([]);
 
- 
-
-  const handleChecked = (id) => {  
-
+  const handleChecked = (id) => {
     setAll((prev) => {
       return prev.map((task) => {
         if (task.id === id) {
@@ -24,10 +22,9 @@ const Home = () => {
     });
   };
 
-  const handleDelete =( id) => {
-    setAll((prev)=> prev.filter((task)=> task.id !== id))
-  }
-
+  const handleDelete = (id) => {
+    setAll((prev) => prev.filter((task) => task.id !== id));
+  };
 
   return (
     <div
@@ -51,7 +48,6 @@ const Home = () => {
         }}
       >
         {JSON.stringify(all)}
-
         <h1 style={{ fontSize: 28 }}>To-Do List</h1>
         <Addtask
           task={task}
@@ -72,7 +68,6 @@ const Home = () => {
                 handleChecked={handleChecked}
                 setAll={setAll}
                 handleDelete={handleDelete}
-
               />
             );
           })}
@@ -88,6 +83,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-

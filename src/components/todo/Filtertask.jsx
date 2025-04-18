@@ -1,8 +1,28 @@
+import { Bluetooth } from "lucide-react";
 import Button from "../todo/To-do-Button";
 
 const Filtertask = () => {
+  // const changeBtn = {
+  //   backgroundColor: "blue",
+  // };
   return (
-    <div style={{ display: "flex", flexDirection: "row", width: 345, gap: 6 }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        width: 345,
+        gap: 6,
+      }}
+    >
+      {/* <Button
+        backgroundColor="#3C82F6"
+        color="white"
+        width="100%" 
+        onClick={onclick}
+        text="all"
+        changeBtn={changeBtn}
+      /> */}
+
       <button
         style={{
           marginTop: 20,
@@ -13,7 +33,6 @@ const Filtertask = () => {
           backgroundColor: "#3C82F6",
           color: "white",
           cursor: "pointer",
-        
         }}
       >
         All
@@ -61,4 +80,3 @@ const Filtertask = () => {
 };
 
 export default Filtertask;
-

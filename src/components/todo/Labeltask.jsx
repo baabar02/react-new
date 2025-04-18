@@ -2,10 +2,7 @@ import { Check, ClipboardCheck } from "lucide-react";
 import Button from "./To-do-Button";
 import Addtask from "./Addtask";
 
-
-
 const Labeltask = ({ handleChecked, taskName, id, setAll, handleDelete }) => {
-
   return (
     <div
       style={{
@@ -34,20 +31,18 @@ const Labeltask = ({ handleChecked, taskName, id, setAll, handleDelete }) => {
           background: <Check />,
         }}
         type="checkbox"
-        onChange={()=>handleChecked(id)}
+        onChange={() => handleChecked(id)}
       ></input>
       {taskName}
       {handleDelete}
       {handleChecked}
-      <Button 
-      onClick={()=> handleDelete(id)}
-      
-      text="delete" />
-
+      <Button
+        onClick={() => handleDelete(id)}
+        backgroundColor="#3C82F6"
+        text="delete"
+      />
     </div>
   );
 };
 
 export default Labeltask;
-
-
