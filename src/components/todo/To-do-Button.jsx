@@ -1,5 +1,6 @@
-const Button = ({ text, onClick, backgroundColor, color = "white" }) => {
+const Button = ({ text, onClick, color, backgroundColor, isClicked,aliButtonDaragdsanbe }) => {
   return (
+   
     <button
       style={{
         height: 40,
@@ -9,18 +10,17 @@ const Button = ({ text, onClick, backgroundColor, color = "white" }) => {
         backgroundColor,
         color,
         cursor: "pointer",
-        transition: "background-color 0.2s, color 0.2s",
-        ":hover": {
-          backgroundColor:
-            backgroundColor === "#3C82F6" ? "#2563EB" : backgroundColor,
+        backgroundColor: text === aliButtonDaragdsanbe  || text === "Add" ?  "#3C82F6" : "#f2f4f6",
           color: color === "red" ? "#B91C1C" : color,
-        },
       }}
-      onClick={onClick}
+      onClick={() => onClick()}
       type="button"
     >
-      {text}
+     {text}
     </button>
+ 
+   
+
   );
 };
 

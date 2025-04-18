@@ -53,7 +53,7 @@ const Addtask = ({ task, setTask, setAll }) => {
         onChange={handleChange}
         aria-label="Add a new task"
       />
-      <Button onClick={handleAdd} text="add" backgroundColor="#3C82F6" />
+      <Button onClick={handleAdd} text="Add" backgroundColor="#3C82F6" />
       <Button onClick={handleClear} text="clear" backgroundColor="#3C82F6" />
     </div>
   );

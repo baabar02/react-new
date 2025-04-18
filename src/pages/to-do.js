@@ -11,6 +11,9 @@ const Home = () => {
   const [task, setTask] = useState("");
   const [all, setAll] = useState([]);
 
+  const [whichButtonClicked, setWhichButtonClicked] = useState("")
+  console.log(whichButtonClicked)
+
   const handleChecked = (id) => {
     setAll((prev) => {
       return prev.map((task) => {
@@ -60,7 +63,8 @@ const Home = () => {
         <div>
           {all.map((el) => {
             return (
-              <Labeltask
+              <Labeltask 
+               
                 key={el.id}
                 taskName={el.taskName}
                 taskChecked={el.taskChecked}
@@ -73,7 +77,10 @@ const Home = () => {
           })}
         </div>
 
-        <Filtertask />
+        <Filtertask 
+         setWhichButtonClicked={setWhichButtonClicked}
+         whichButtonClicked={whichButtonClicked}
+         />
 
         <Cleartask />
         {/* <Alerttask /> */}
