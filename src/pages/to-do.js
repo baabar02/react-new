@@ -133,13 +133,12 @@ const Home = () => {
     setAll((prev) => prev.filter((task) => task.id !== id));
   };
 
-  // Filter tasks based on whichButtonClicked
   const filteredTasks = all.filter((task) => {
     if (whichButtonClicked === "Active") 
       return !task.taskChecked;
     if (whichButtonClicked === "Completed") 
       return task.taskChecked;
-    return true; // "All"
+    return true; 
   });
 
   return (
@@ -196,8 +195,9 @@ const Home = () => {
           clearCompletedHandler={clearCompletedHandler}
         />
 
-        {all.length === 0 && <Alerttask />}
-        {/* Optional: Add localStorage to persist tasks */}
+        {/* {all.length === 0 && <Alerttask />} */}
+        <Alerttask all={all.length}/>
+     
       </div>
     </div>
   );

@@ -86,7 +86,7 @@ const Filtertask = ({ setWhichButtonClicked }) => {
             key={index}
             text={text}
             onClick={handleClick}
-            aliButtonDaragdsanbe={selectedFilter} // Kept prop name for Button compatibility
+            aliButtonDaragdsanbe={selectedFilter} 
           />
         );
       })}

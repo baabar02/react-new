@@ -1,7 +1,12 @@
-const Alerttask = () => {
+import Labeltask from "./Labeltask";
+
+const Alerttask = ({all}) => {
+
+if(all === 0 )  
   return (
-    <div>
+    
       <div>
+      
         <button
           style={{
             marginTop: "30px",
@@ -13,7 +18,7 @@ const Alerttask = () => {
         >
           No tasks yet. Add one above!
         </button>
-      </div>
+    
       <div>
         <p style={{ color: "grey" }}>
           Powered by
@@ -29,8 +34,9 @@ const Alerttask = () => {
           </button>
         </p>
       </div>
-    </div>
+      </div>
   );
-};
+
+}
 
 export default Alerttask;
