@@ -2,8 +2,6 @@
 
 // const Cleartask = ({all, taskChecked, clearCompletedHandler, setAll}) => {
 
-
-
 //   return (
 //     <div
 //       style={{
@@ -21,7 +19,7 @@
 // {all.filter((el)=> el.taskChecked).lenght} of {all.lenght} tasks completed
 // </p>
 //    <Button text="Clear completed" onClick={clearCompletedHandler} />
-      
+
 //     </div>
 //   );
 // };
@@ -48,7 +46,11 @@ const Cleartask = ({ all, clearCompletedHandler }) => {
         {all.filter((el) => el.taskChecked).length} of {all.length} tasks
         completed
       </p>
-      <Button text="Clear completed" onClick={clearCompletedHandler} />
+      <Button
+        text="Clear completed"
+        color="red"
+        onClick={clearCompletedHandler}
+      />
     </div>
   );
 };

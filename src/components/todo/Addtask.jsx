@@ -61,7 +61,6 @@
 
 // export default Addtask;
 
-
 import Button from "./To-do-Button";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
@@ -116,7 +115,12 @@ const Addtask = ({ task, setTask, setAll }) => {
         onChange={handleChange}
         aria-label="Enter a new task to add to the to-do list"
       />
-      <Button onClick={handleAdd} text="Add" backgroundColor="#3C82F6" />
+      <Button
+        onClick={handleAdd}
+        text="Add"
+        width="60px"
+        backgroundColor="#3C82F6"
+      />
       <Button onClick={handleClear} text="clear" backgroundColor="#3C82F6" />
     </div>
   );
